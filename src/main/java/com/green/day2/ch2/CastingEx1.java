@@ -8,7 +8,7 @@ public class CastingEx1 {
         System.out.println("d : " + d);
 
         byte b1 = 127;
-        short s1 = (short)b1;
+        short s1 = b1;
         int i1 = s1;
 
         float f1 = i1;

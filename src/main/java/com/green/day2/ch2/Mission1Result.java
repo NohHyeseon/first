@@ -4,6 +4,7 @@ public class Mission1Result {
     public static void main(String[] args) {
         int n1 = 10, n2 = 3;
 
+        System.out.println(n1 / n2);
         double r = (double)n1 / n2;
 
         float r2 = (float)n1 / n2;

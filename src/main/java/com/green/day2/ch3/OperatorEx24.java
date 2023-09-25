@@ -2,7 +2,7 @@ package com.green.day2.ch3;
 // p.116
 public class OperatorEx24 {
     public static void main(String[] args) {
-        boolean b1 = 1 == 1 && 2 == 2; // and 연산자
+        boolean b1 = 1 == 1 && 1 == 1; // and 연산자
         System.out.println("b1 : " + b1);
 
         boolean b2 = 1 == 1 && 2 == 2 && 3 == 4; // and 연산자

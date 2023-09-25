@@ -38,7 +38,7 @@ public class Naming {
         //상수는 전부 대문자 구분은 언더바
 
         // PI, MAX_NUMBER
-        final int PI = 0, MAX_NUMBER = 10;
+        final int PI = 0, MAX_NUMBER = 12;
 
         Date today = new Date();
     }
