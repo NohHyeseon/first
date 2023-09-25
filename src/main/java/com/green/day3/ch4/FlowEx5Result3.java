@@ -33,6 +33,7 @@ public class FlowEx5Result3 {
                 opt = "-";
             }
         }
+
         System.out.printf("%s%s 학점", grade, opt);
     }
 }
