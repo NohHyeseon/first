@@ -26,7 +26,5 @@ public class FlowEx5MissionResult {
                 System.out.printf("%dcm는 여자 평균입니다.", height);
             }
         }
-
-
     }
 }
