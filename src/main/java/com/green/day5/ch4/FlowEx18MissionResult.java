@@ -8,7 +8,6 @@ public class FlowEx18MissionResult {
                 System.out.printf("%d x %d = %d\t", z, i, z * i);
             }
             System.out.println();
-            System.out.println();
         }
     }
 }
