@@ -4,7 +4,7 @@ public class FlowEx30Result {
     public static void main(String[] args) {
         int sum = 0;
         int i = 0;
-        final int TARGET = 100;
+        final int TARGET = 200;
 
         while(sum < TARGET) {
             System.out.printf("sum: %d\n", sum);
