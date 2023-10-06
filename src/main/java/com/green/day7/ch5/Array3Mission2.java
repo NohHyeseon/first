@@ -2,7 +2,7 @@ package com.green.day7.ch5;
 
 public class Array3Mission2 {
     public static void main(String[] args) {
-        int[] arr1 = { 5, 10, 15, 16, 17, 18, 19, 22, 23 };
+        int[] arr1 = { 5, 10, 15, 16, 17, 18, 11, 19, 22, 23};
         int[] arr2 = new int[arr1.length + 1];
 
         for(int i=0; i<arr1.length; i++) {

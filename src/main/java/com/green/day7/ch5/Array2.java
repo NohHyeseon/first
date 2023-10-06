@@ -9,7 +9,8 @@ public class Array2 {
             System.out.printf("arr1[%d]: %d\n", i, arr1[i]);
         }
 
-        arr1 = arr2;
+        arr1 = arr2; // 얕은복사
+
         System.out.println("----");
 
         arr1[1] = 44;

@@ -11,7 +11,7 @@ public class FlowEx29Result {
                 if(tmp % 10 % 3 == 0 && tmp % 10 != 0) {
                     System.out.print("짝");
                 }
-            } while((tmp/=10) != 0);
+            } while((tmp/=10) != 0); // tmp = 3
             System.out.println();
         }
     }

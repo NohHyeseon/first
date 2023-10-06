@@ -9,7 +9,6 @@ public class Array3 {
         for(int i=0; i<arr2.length; i++) {
             System.out.printf("arr2[%d]: %d\n", i, arr2[i]);
         }
-
         for(int i=0; i<arr1.length; i++) {
             arr2[i] = arr1[i];
         }
