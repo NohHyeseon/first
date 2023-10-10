@@ -4,17 +4,22 @@ import java.util.Arrays;
 
 public class ArrayEx2Result {
     public static void main(String[] args) {
+        final int LEN = 10;
+        int[] arr = new int[LEN];
 
-        int[] arr = new int[10];
         for(int i=0; i<arr.length; i++) {
-            arr[i] = (int)(Math.random() * 10) + 1;
+            int rVal = (int)(Math.random() * 10) + 1;
+            arr[i] = rVal;
         }
 
         for(int i=0; i<arr.length; i++) {
             System.out.printf("arr[%d]: %d\n", i, arr[i]);
         }
 
-        System.out.println(arr);
+        int[] arr2 = arr;
+
+        System.out.println("arr : " + arr);
+        System.out.println("arr2 : " + arr2);
         System.out.println(arr.toString());
         System.out.println(Arrays.toString(arr));
 
