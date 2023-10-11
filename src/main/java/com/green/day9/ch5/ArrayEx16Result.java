@@ -11,7 +11,7 @@ public class ArrayEx16Result {
        저장되어있는 값들을 콘솔에 출력한다.
         */
     public static void main(String[] args) {
-        String[] strArr = new String[3];
+        String[] strArr = new String[4];
         Scanner scan = new Scanner(System.in);
 
         for(int i=0; i<strArr.length; i++) {

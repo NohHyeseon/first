@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArrayEx9 {
     public static void main(String[] args) {
-        int[] code = { -4, -1, 3, 6, 11 };
+        int[] code = { -4, -1, 3, 6, 11, 12 };
         int[] arr = new int[10];
 
         /*

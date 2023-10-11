@@ -10,7 +10,6 @@ public class ArrayEx19Result {
                 , {  51,  52,  53 }
         };
         int[] sumArr = new int[score[0].length];
-
         System.out.println("번호\t국어\t영어\t수학\t총점\t평균");
         System.out.println("----------------------------------");
         for(int i = 0; i< score.length; i++) {

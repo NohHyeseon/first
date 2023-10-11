@@ -19,7 +19,7 @@ public class ArrayEx12 {
         System.out.println("-----");
         for(int i=0; i<names.length; i++) {
             String str = names[i];
-            System.out.println(str);
+            System.out.printf("names[%d]: %s\n", i, str);
         }
     }
 }

@@ -14,10 +14,16 @@ public class ArrayEx11Result {
         }
         System.out.println(Arrays.toString(numArr));
 
+        /*
         for(int i=0; i<LEN; i++) {
             int val = numArr[i];
             cntArr[val]++;
         }
+        */
+        for(int n : numArr) {
+            cntArr[n]++;
+        }
+
         System.out.println(Arrays.toString(cntArr));
         /*
         numArr 각 방에 0~9사이의 랜덤값을 대입한다 (중복 허용)
