@@ -12,5 +12,14 @@ public class MethodExam2Test {
         C학점 8점이상 +, 3점이하 -, 나머지 0
         D학점 (+-0 없음)
          */
+
+        String season = me2.getSeason(10);
+        /*
+        3, 4, 5 >> 봄
+        6, 7, 8 >> 여름
+        9, 10, 11 >> 가을
+        12, 1, 2 >> 겨울
+        나머지 >> 없음
+         */
     }
 }
