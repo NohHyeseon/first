@@ -13,6 +13,7 @@ public class MultiArrEx4Result2 {
         };
 
         Scanner scan = new Scanner(System.in);
+
         int i = 1;
         for(String[] wordArr : words) {
             System.out.printf("Q%d. %s의 뜻은? >> ", i++, wordArr[0]);

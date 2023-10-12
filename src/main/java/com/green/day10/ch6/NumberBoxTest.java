@@ -9,6 +9,8 @@ public class NumberBoxTest {
         System.out.printf("%d + %d = %d\n", 30, 40, (30 + 40));
 
         System.out.println("----------------");
+
+
         nb1.sum(10, 20);
         nb1.sum(30, 40);
 

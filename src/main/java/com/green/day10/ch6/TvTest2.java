@@ -7,6 +7,7 @@ public class TvTest2 {
         Tv tv2 = new Tv();
 
         System.out.printf("tv1.channel : %d\n", tv1.channel);
+        tv1.channel++;
         tv1.channelUp();
         tv1.channelUp();
         System.out.printf("tv1.channel : %d\n", tv1.channel);

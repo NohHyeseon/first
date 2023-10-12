@@ -9,6 +9,7 @@ public class TvTest {
         tv1.channel = 10;
         tv1.color = "빨간색";
 
+
         Tv tv2 = new Tv();
 
 

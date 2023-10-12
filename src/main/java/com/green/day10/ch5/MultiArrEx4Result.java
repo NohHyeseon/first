@@ -19,7 +19,8 @@ public class MultiArrEx4Result {
             String expectedAnswer = wordArr[1];
 
             if(!answer.equals(expectedAnswer)) {
-                System.out.printf("오답입니다. 정답은 %s입니다.\n", expectedAnswer);
+                System.out.printf("오답입니다. 정답은 %s입니다.\n",
+                        expectedAnswer);
                 continue;
             }
             System.out.println("정답입니다.");

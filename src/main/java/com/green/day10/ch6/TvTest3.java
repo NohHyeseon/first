@@ -6,10 +6,10 @@ public class TvTest3 {
 
         Tv tv2 = tv1;
 
-        System.out.printf("tv1.channel : %d\n", tv1.channel); //0, 0
+        System.out.printf("tv1.channel : %d\n", tv1.channel);
         tv1.channelUp();
         tv1.channelUp();
-        System.out.printf("tv1.channel : %d\n", tv1.channel); //2, 2
-        System.out.printf("tv2.channel : %d\n", tv2.channel); //2, 2
+        System.out.printf("tv1.channel : %d\n", tv1.channel);
+        System.out.printf("tv2.channel : %d\n", tv2.channel);
     }
 }
