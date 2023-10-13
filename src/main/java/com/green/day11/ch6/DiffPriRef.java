@@ -6,14 +6,12 @@ public class DiffPriRef {
         System.out.println("num : " + num);
 
         NumBox nb = new NumBox();
-        nb.num = 100;
-        nb.num = 200;
-        nb = new NumBox();
+
         System.out.println("(1)nb.num : " + nb.num);
         nb.num = 30;
         System.out.println("(2)nb.num : " + nb.num);
         changeVal(nb);
-        System.out.println("(3)nb.num : " + nb.num);
+        System.out.println("(3)nb.num : " + nb.num); //10
     }
     public static void changeVal(int num) {
         System.out.println("changeVal - int");
