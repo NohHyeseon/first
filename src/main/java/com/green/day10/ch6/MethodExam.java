@@ -11,7 +11,7 @@ public class MethodExam {
         return;
     }
 
-    int randomValFromTo(int from, int to) {
+    public int randomValFromTo(int from, int to) {
         return (int)(Math.random() * (to - from + 1)) + from;
     }
 
