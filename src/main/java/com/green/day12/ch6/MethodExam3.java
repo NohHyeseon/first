@@ -26,6 +26,7 @@ public class MethodExam3 {
         MethodExam3 me3 = new MethodExam3();
 
         String test = "9871231";
+        int aaa = me3.sumText(test);
         System.out.println(me3.sumText(test));
         System.out.println(me3.sumText2(test));
 

@@ -26,5 +26,6 @@ public class CardTest {
 
         System.out.println(c1.getScore()); //1
         System.out.println(c2.getScore()); //10
+
     }
 }
