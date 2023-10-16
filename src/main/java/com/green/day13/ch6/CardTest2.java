@@ -11,7 +11,6 @@ public class CardTest2 {
         for(Card c : cards) {
             c.printYourSelf(); //Spade (A), Heart (2)
         }
-
     }
 
     public static String getNumberFromInt(int num) {
