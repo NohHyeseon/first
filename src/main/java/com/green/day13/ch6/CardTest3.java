@@ -10,13 +10,11 @@ class Card {
 }
 public class CardTest3 {
     public static void main(String[] args) {
-
         Card[] cards = CardTest3.makeCards();
         System.out.println(cards.length);
         for(Card c : cards) {
             c.printYourSelf();
         }
-
     }
 
     public static Card[] makeCards() {
@@ -26,9 +24,13 @@ public class CardTest3 {
         for(int i=0; i< cArr.length; i++) {
             String pattern = patterns[i / 13];
             String denomination = getNumberFromInt(i % 13);
-            cArr[i] = new Card();
-            cArr[i].pattern = pattern;
-            cArr[i].denomination = denomination;
+//            cArr[i] = new Card();
+//            cArr[i].pattern = pattern;
+//            cArr[i].denomination = denomination;
+            Card c  = new Card();
+            cArr[i] = c;
+            c.denomination = denomination;
+            c.pattern = pattern;
         }
         return cArr;
     }
