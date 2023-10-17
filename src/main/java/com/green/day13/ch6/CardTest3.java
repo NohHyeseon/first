@@ -25,11 +25,14 @@ public class CardTest3 {
             String pattern = patterns[i / 13];
             String denomination = getNumberFromInt(i % 13);
 //            cArr[i] = new Card();
+//            Card c = cArr[i];
+            //c.pattern = pattern;
 //            cArr[i].pattern = pattern;
 //            cArr[i].denomination = denomination;
-            Card c  = new Card();
+            Card c = new Card();
             cArr[i] = c;
             c.denomination = denomination;
+            cArr[i].denomination = denomination;
             c.pattern = pattern;
         }
         return cArr;

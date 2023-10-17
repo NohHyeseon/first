@@ -29,8 +29,8 @@ public class CardTest2 {
         int cnt = 0;
         for(int i=0; i<kinds.length; i++) {
             for(int z=1; z<=13; z++) {
-                String number = getNumberFromInt(z); //1 > "A", 2 > "2", 13 > "K"
                 Card c = new Card();
+                String number = getNumberFromInt(z); //1 > "A", 2 > "2", 13 > "K"
                 c.kind = kinds[i];
                 c.number = number;
                 //cards[(i*13) + (z-1)] = c;
