@@ -5,7 +5,16 @@ public class CardTest {
         CardDeck cd = new CardDeck();
         cd.printAll();
 
-        Card c1 = cd.getCard(); //return null;
+        //Card c1 = cd.getCard(); //return null;
+        //Card c2 = cd.getCard(); //return null;
+
+        for(int i=0; i<52; i++) {
+            System.out.println(i);
+            Card c = cd.getCard();
+            c.printMySelf();
+        }
+        System.out.println("-----");
+        //cd.printAll();
         /*
         Spade (A)
         Spade (2)

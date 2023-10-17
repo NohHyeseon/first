@@ -36,4 +36,17 @@ public class CardDeck {
             c.printMySelf();
         }
     }
+
+    public Card getCard() {
+        Card c = null;
+        while(true) {
+            int rIdx = (int)(Math.random() * cards.length);
+            c = cards[rIdx];
+            if(c != null) {
+                cards[rIdx] = null;
+                break;
+            }
+        }
+        return c;
+    }
 }
