@@ -51,6 +51,10 @@ class Deck {
         return cardArr[idx];
     }
 
+    public Card pick() {
+        int rIdx = (int)(Math.random() * CARD_NUM);
+        return cardArr[rIdx];
+    }
 }
 
 public class DeckTest {
@@ -61,5 +65,6 @@ public class DeckTest {
         System.out.println(c1);
         System.out.println("----");
         Card c2 = deck.pick();
+        System.out.println(c2);
     }
 }
