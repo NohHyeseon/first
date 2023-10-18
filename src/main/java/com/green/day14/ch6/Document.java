@@ -3,17 +3,21 @@ package com.green.day14.ch6;
 public class Document {
     static int cnt = 0;
     String name;
+
     {
         cnt++;
     }
 
     public Document() {
-        this.name = String.format("제목없음%d", cnt);
-        System.out.printf("문서 %s가 생성되었습니다.\n", this.name);
-        //this(String.format("제목없음%d", cnt));
+
+        //super();
+       //this.name = String.format("제목없음%d", cnt);
+        //System.out.printf("문서 %s가 생성되었습니다.\n", this.name);
+        this("제목없음" + cnt);
     }
 
     public Document(String name) {
+        super();
         this.name = name;
         System.out.printf("문서 %s가 생성되었습니다.\n", this.name);
     }

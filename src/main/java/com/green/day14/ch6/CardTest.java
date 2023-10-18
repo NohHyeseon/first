@@ -14,7 +14,7 @@ public class CardTest {
             c.printMySelf();
         }
         System.out.println("-----");
-        //cd.printAll();
+        cd.printAll();
         /*
         Spade (A)
         Spade (2)
