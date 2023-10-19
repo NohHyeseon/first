@@ -1,14 +1,14 @@
 package com.green.day13.ch6;
 
-public class MyMath2 {
+public class MyMath2  {
     int num;
-    static int staticNum;
+    public static int staticNum;
 
     void instanceAbs() {
         System.out.println(num < 0 ? -num : num);
     }
 
-    static void staticAbs(int n) {
+    public static void staticAbs(int n) {
         System.out.println(n < 0 ? -n : n);
     }
 

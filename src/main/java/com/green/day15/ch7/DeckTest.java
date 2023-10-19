@@ -46,6 +46,7 @@ class Deck {
         for(Card c : cardArr) {
             System.out.println(c);
         }
+
     }
     public Card pick(int idx) {
         return cardArr[idx];
@@ -53,18 +54,26 @@ class Deck {
 
     public Card pick() {
         int rIdx = (int)(Math.random() * CARD_NUM);
-        return cardArr[rIdx];
+        return pick(rIdx);
+        //return cardArr[rIdx];
     }
+
+    public void shuffle() {
+
+        for(int i=0; i<CARD_NUM; i++) {
+            int rIdx = (int)(Math.random() * CARD_NUM); // 0~51
+            Card tmp = pick(i);
+            cardArr[i] = pick(rIdx);
+            cardArr[rIdx] = tmp;
+        }
+    }
+
 }
 
 public class DeckTest {
     public static void main(String[] args) {
         Deck deck = new Deck();
-        Card c1 = deck.pick(51);
-        System.out.println("----");
-        System.out.println(c1);
-        System.out.println("----");
-        Card c2 = deck.pick();
-        System.out.println(c2);
+        System.out.println("----------------");
+        deck.shuffle();
     }
 }
