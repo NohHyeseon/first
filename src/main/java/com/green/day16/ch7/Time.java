@@ -1,6 +1,8 @@
 package com.green.day16.ch7;
 
 public class Time {
+    public final static int MIN_HOUR = 0;
+    public final static int MAX_HOUR = 23;
     private int hour, minute, second;
 
     //1. 생성자
@@ -11,7 +13,9 @@ public class Time {
     }
 
     //2. setter 메소드
-    public void setHour(int hour) {
+    public void setHour(final int hour) {
+        if(hour < MIN_HOUR) { this.hour = MIN_HOUR; return; }
+        if(hour > MAX_HOUR) { this.hour = MAX_HOUR; return; }
         this.hour = hour;
     }
 
@@ -19,7 +23,8 @@ public class Time {
         this.minute = minute;
     }
 
-    public void setSecond(int second) {
+    public void setSecond(final int second) {
+
         this.second = second;
     }
 
@@ -37,7 +42,7 @@ public class Time {
 
     @Override
     public String toString() {
-        return String.format("%d시 %d분 %d초"
+        return String.format("%02d:%02d:%02d"
                 , hour, minute, second);
     }
 }
@@ -46,9 +51,12 @@ public class Time {
 class TimeTest {
     public static void main(String[] args) {
         Time time = new Time(11, 20, 30);
-        time.setMinute(30);
+        time.setMinute(3);
 
-        System.out.println(time); //10시 20분 30초
+        time.setHour(2);
+        // 0~23, 만약 23초과값이 들어오면 23이, 0미만 값이 0이 들어가도록
+
+        System.out.println(time); //02:03:30
         //time.hour = 10;
     }
 }

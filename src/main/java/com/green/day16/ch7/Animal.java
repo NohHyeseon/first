@@ -6,7 +6,8 @@ class AnimalTest {
     public static void main(String[] args) {
         //1. 부모타입은 자식 객체 주소값 담을 수 있다.
         Dog d1 = new Bulldog();
-        Animal ani1 = new Bulldog();
+        Animal ani1 = d1;
+        Bulldog bull = (Bulldog)ani1;
         Animal ani2 = new Dog();
         Animal ani3 = new Cat();
 
@@ -29,6 +30,37 @@ class AnimalTest {
 
     }
 }
+class AnimalTest3 {
+    public static void main(String[] args) {
+        Animal ani = new Cat();
+        System.out.println(ani instanceof Dog); //false
+        //Dog dog = (Dog)ani;
+        System.out.println(ani instanceof Cat); //true
+        Cat cat = (Cat)ani;
+        System.out.println("-- 끝 --");
+    }
+}
+
+class AnimalTest2 {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        Bulldog bulldog = new Bulldog();
+
+        callCrying(dog);
+        callCrying(cat);
+        callCrying(bulldog);
+    }
+
+    private static void callCrying(Animal ani) {
+        ani.crying();
+        //bulldog인지 체크 > 맞으면 jump() 호출 아니면 아무것도 안 함.
+        if(ani instanceof Bulldog) {
+            Bulldog bulldog = (Bulldog) ani;
+            bulldog.jump();
+        }
+    }
+}
 
 public class Animal {
     public void crying() {
@@ -48,7 +80,6 @@ class Bulldog extends Dog {
     public void jump() {
         System.out.println("불독이 점프! 점프!");
     }
-
     @Override
     public void crying() {
         System.out.println("불독이 왈! 왈!");
