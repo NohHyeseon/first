@@ -6,6 +6,7 @@ class AnimalTest {
     public static void main(String[] args) {
         //1. 부모타입은 자식 객체 주소값 담을 수 있다.
         Dog d1 = new Bulldog();
+        d1.crying();
         Animal ani1 = d1;
         Bulldog bull = (Bulldog)ani1;
         Animal ani2 = new Dog();
