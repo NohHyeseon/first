@@ -22,20 +22,18 @@ class PolyArgumentTestVer2_3 {
     public static void main(String[] args) {
         Buyer2 buyer = new Buyer2();
         buyer.buy(new Tv2());       //0
-        buyer.buy(new Computer2()); //1
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
-        buyer.buy(new Audio2());    //2
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+        buyer.buy(new Tv2());       //0
+
 
         Product2[] arr = buyer.productArr;
         for(int i=0; i<arr.length; i++) {
@@ -55,13 +53,23 @@ class Buyer2 {
     private int i;
 
     public Buyer2() {
-        this.money = 1000;
+        this.money = 1500;
         this.bonusPoint = 0;
         productArr = new Product2[10];
     }
 
     public void buy(Product2 p) {
+        if(i == productArr.length) {
+            System.out.println("더 이상 구매할 수 없습니다.");
+            return;
+        }
+        if(money < p.getPrice()) {
+            System.out.println("금액이 부족합니다.");
+            return;
+        }
         productArr[i++] = p;
+        money -= p.getPrice();
+        bonusPoint += p.getBonusPoint();
     }
 }
 
