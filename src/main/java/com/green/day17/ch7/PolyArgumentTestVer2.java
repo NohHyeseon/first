@@ -22,9 +22,7 @@ class PolyArgumentTestVer2_3 {
     public static void main(String[] args) {
         Buyer2 buyer = new Buyer2();
         buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
+        buyer.buy(new Computer2());       //0
         buyer.buy(new Tv2());       //0
         buyer.buy(new Tv2());       //0
         buyer.buy(new Tv2());       //0
@@ -35,11 +33,7 @@ class PolyArgumentTestVer2_3 {
         buyer.buy(new Tv2());       //0
 
 
-        Product2[] arr = buyer.productArr;
-        for(int i=0; i<arr.length; i++) {
-            Product2 p = arr[i];
-            System.out.printf("arr[%d] : %s\n", i, p);
-        }
+        buyer.summary(); //총 구매금액: 1000만원
     }
 }
 
@@ -49,18 +43,26 @@ class Buyer2 {
     //Product2 객체의 주소값 여러개 저장 가능
     private int money;
     private int bonusPoint;
-    Product2[] productArr;
+    private Product2[] productArr;
     private int i;
+    private String[] productNames;
+    private int[] productCnts;
 
     public Buyer2() {
-        this.money = 1500;
+        productNames = new String[]{ "Tv" , "Computer" , "Audio" };
+        productCnts = new int[productNames.length];
+        this.money = 3500;
         this.bonusPoint = 0;
         productArr = new Product2[10];
     }
 
     public void buy(Product2 p) {
+        if(p == null) {
+            System.out.println("잘못 구매하셨습니다.");
+            return;
+        }
         if(i == productArr.length) {
-            System.out.println("더 이상 구매할 수 없습니다.");
+            System.out.println("담을 수 있는 공간이 없습니다.");
             return;
         }
         if(money < p.getPrice()) {
@@ -70,6 +72,45 @@ class Buyer2 {
         productArr[i++] = p;
         money -= p.getPrice();
         bonusPoint += p.getBonusPoint();
+
+        int idx = getType(p);
+        productCnts[idx]++;
+        System.out.printf("%s을(를) 구매하였습니다.\n", p.getName());
+    }
+
+    public void summary() {
+        int sum = 0;
+        for(Product2 p : productArr) {
+            if(p == null) { break; }
+            sum += p.getPrice();
+        }
+        System.out.printf("총 구매금액: %,d, 남은금액: %,d, 보너스 포인트: %,d\n", sum, money, bonusPoint);
+        /*
+        System.out.printf("%s: %d대", productNames[0], productCnts[0]);
+        for(int i=1; i<productNames.length; i++) {
+            System.out.printf(", %s: %d대", productNames[i], productCnts[i]);
+        }
+         */
+        int commaIdx = 0;
+        for(int i=0; i<productNames.length; i++) {
+            if(productCnts[i] > 0) {
+                if(commaIdx != 0) {
+                    System.out.print(", ");
+                }
+                commaIdx++;
+                System.out.printf("%s: %,d대", productNames[i], productCnts[i]);
+            }
+        }
+        System.out.println("를 구매하였습니다.");
+    }
+
+    private int getType(Product2 p) {
+        for(int i=0; i<productNames.length; i++) {
+            if(p.getName().equals(productNames[i])) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
 
