@@ -21,14 +21,7 @@ class PolyArgumentTestVer2_2 {
 class PolyArgumentTestVer2_3 {
     public static void main(String[] args) {
         Buyer2 buyer = new Buyer2();
-        buyer.buy(new Tv2());       //0
         buyer.buy(new Computer2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
-        buyer.buy(new Tv2());       //0
         buyer.buy(new Tv2());       //0
         buyer.buy(new Tv2());       //0
 
@@ -49,7 +42,7 @@ class Buyer2 {
     private int[] productCnts;
 
     public Buyer2() {
-        productNames = new String[]{ "Tv" , "Computer" , "Audio" };
+        productNames = new String[]{ "Tv" , "Computer" , "Audio"};
         productCnts = new int[productNames.length];
         this.money = 3500;
         this.bonusPoint = 0;
@@ -69,6 +62,7 @@ class Buyer2 {
             System.out.println("금액이 부족합니다.");
             return;
         }
+
         productArr[i++] = p;
         money -= p.getPrice();
         bonusPoint += p.getBonusPoint();
@@ -77,14 +71,22 @@ class Buyer2 {
         productCnts[idx]++;
         System.out.printf("%s을(를) 구매하였습니다.\n", p.getName());
     }
-
+    private int getType(Product2 p) {
+        for(int i=0; i<productNames.length; i++) {
+            if(p.getName().equals(productNames[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public void summary() {
         int sum = 0;
         for(Product2 p : productArr) {
             if(p == null) { break; }
             sum += p.getPrice();
         }
-        System.out.printf("총 구매금액: %,d, 남은금액: %,d, 보너스 포인트: %,d\n", sum, money, bonusPoint);
+        System.out.printf("총 구매금액: %,d, 남은금액: %,d, 보너스 포인트: %,d\n"
+                , sum, money, bonusPoint);
         /*
         System.out.printf("%s: %d대", productNames[0], productCnts[0]);
         for(int i=1; i<productNames.length; i++) {
@@ -98,20 +100,14 @@ class Buyer2 {
                     System.out.print(", ");
                 }
                 commaIdx++;
-                System.out.printf("%s: %,d대", productNames[i], productCnts[i]);
+                System.out.printf("%s: %,d대"
+                        , productNames[i], productCnts[i]);
             }
         }
         System.out.println("를 구매하였습니다.");
     }
 
-    private int getType(Product2 p) {
-        for(int i=0; i<productNames.length; i++) {
-            if(p.getName().equals(productNames[i])) {
-                return i;
-            }
-        }
-        return -1;
-    }
+
 }
 
 class Audio2 extends Product2 {
@@ -130,6 +126,7 @@ class Tv2 extends Product2 {
     public Tv2() {
         super("Tv", 100);
     }
+
 }
 
 class Product2 {

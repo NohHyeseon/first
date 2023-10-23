@@ -15,7 +15,7 @@ class AnimalTest {
         //2. 자식타입은 부모 객체 주소값 담을 수 없다.
         //Bulldog bull1 = new Dog();
         Dog d2 = new Dog();
-        //Bulldog bull2 = (Bulldog)d2;
+        Bulldog bull2 = (Bulldog)d2;
         Animal ani4 = d2;
         System.out.println("끝");
 
@@ -56,7 +56,8 @@ class AnimalTest2 {
     private static void callCrying(Animal ani) {
         ani.crying();
         //bulldog인지 체크 > 맞으면 jump() 호출 아니면 아무것도 안 함.
-        if(ani instanceof Bulldog) {
+
+        if(ani instanceof Dog) {
             Bulldog bulldog = (Bulldog) ani;
             bulldog.jump();
         }

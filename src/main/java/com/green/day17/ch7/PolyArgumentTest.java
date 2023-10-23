@@ -32,6 +32,14 @@ class PolyArgumentTest2 {
     }
 }
 class Buyer {
+    private int money;
+    private int bonusPoint;
+
+    public Buyer() {
+        this.money = 1050;
+        this.bonusPoint = 0;
+    }
+
     public void buy(Product product) {
         if(money < product.getPrice()) {
             System.out.println("잔액 부족");
@@ -43,27 +51,19 @@ class Buyer {
         System.out.printf("%s을/를 구매하셨습니다.\n", product);
     }
 
-    private int money;
-    private int bonusPoint;
-
-    public Buyer() {
-        this.money = 1050;
-        this.bonusPoint = 0;
-    }
-
-
-
 
     @Override
     public String toString() {
         return String.format("money: %d, bonusPoint: %d", money, bonusPoint);
     }
 
+
 }
 
 class Product {
     private int price;
     private int bonusPoint;
+
     protected Product(int price) {
         this.price = price;
         this.bonusPoint = (int)(price * 0.1);
