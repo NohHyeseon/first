@@ -1,7 +1,9 @@
 package com.green.day17.ch7;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class PolyArgumentTestVer2 {
     public static void main(String[] args) {
@@ -30,6 +32,19 @@ class PolyArgumentTestVer2_3 {
 
 
         buyer.summary(); //총 구매금액: 1000만원
+    }
+}
+
+class PolyArgumentTestVer2_4{
+    public static void main(String[] args) {
+        Buyer3 buyer = new Buyer3();
+        buyer.buy(new Computer2());
+        buyer.buy(new Computer2());
+        buyer.buy(new Computer2());
+        buyer.buy(new Tv2());
+        buyer.buy(new Audio2());
+        buyer.buy(new Audio2());
+        buyer.summary();
     }
 }
 
@@ -149,11 +164,13 @@ class Buyer3 {
 
         String productName = p.getName();
         if(buyItems.containsKey(productName)) {
-
+            buyItems.put(productName
+                    , buyItems.get(productName) + 1);
         } else {
-
+            buyItems.put(productName, 1);
         }
-        System.out.printf("%s을(를) 구매하였습니다.\n", productName);
+        System.out.printf("%s을(를) 구매하였습니다.\n"
+                , productName);
     }
 
     public void summary() {
@@ -164,22 +181,13 @@ class Buyer3 {
         }
         System.out.printf("총 구매금액: %,d, 남은금액: %,d, 보너스 포인트: %,d\n"
                 , sum, money, bonusPoint);
-        /*
-        System.out.printf("%s: %d대", productNames[0], productCnts[0]);
-        for(int i=1; i<productNames.length; i++) {
-            System.out.printf(", %s: %d대", productNames[i], productCnts[i]);
-        }
-         */
-        int commaIdx = 0;
-        for(int i=0; i<productNames.length; i++) {
-            if(productCnts[i] > 0) {
-                if(commaIdx != 0) {
-                    System.out.print(", ");
-                }
-                commaIdx++;
-                System.out.printf("%s: %,d대"
-                        , productNames[i], productCnts[i]);
-            }
+
+        Set<String> namesSet = buyItems.keySet();
+        Iterator<String> iterator = namesSet.iterator();
+        while(iterator.hasNext()){
+            String key = iterator.next();
+            int cnt = buyItems.get(key);
+            System.out.printf(" %s: %d대", key, cnt);
         }
         System.out.println("를 구매하였습니다.");
     }
