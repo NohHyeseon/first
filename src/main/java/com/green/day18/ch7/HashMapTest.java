@@ -19,7 +19,8 @@ public class HashMapTest {
 class HashMapTest2 {
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap();
-        map.put("Tv", 0);
+        map.put("Tv", 10);
+        //map.put(1, 0);
         map.put("Computer", 0);
         map.put("Audio", 0);
 

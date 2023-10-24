@@ -32,15 +32,15 @@ public class ArrayListTest {
 
 class ArrayListTest2 {
     public static void main(String[] args) {
-        int v1 = 10;
+        int  v1 = 10;
         Integer v2 = 10;
         System.out.println(v1 == v2);
         List<Integer> list = new ArrayList();
 
-        list.add(10);
-        list.add(20);
-        list.add(34);
-        list.add(45);
+        list.add(10); //0
+        list.add(20); //1
+        list.add(34); //2
+        list.add(45); //3
         //list.add(10.3f);
         //list.add(10.3d);
         //list.add("ddd");
@@ -78,7 +78,7 @@ class ArrayListTest3 {
         list.add(3, 200);
         System.out.println("3: " + list);
 
-        list.remove(0);
+        int val = list.remove(0);
         System.out.println("4: " + list + ", size : " + list.size());
     }
 }
