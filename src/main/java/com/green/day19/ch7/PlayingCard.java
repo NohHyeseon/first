@@ -47,6 +47,7 @@ class Card implements PlayingCard {
 
 class PlayingCardTest {
     public static void main(String[] args) {
+        System.out.println(PlayingChess.CLOVER);
         System.out.println(PlayingCard.CLOVER);
     }
 }

@@ -13,14 +13,15 @@ class StarcraftGame {
         unit2.move(10, 20);
 
         Tank t = new Tank();
-        t.changeMode2();
-        t.changeMode2();
-        t.changeMode2();
+        t.changeMode();
+        t.changeMode();
+        t.changeMode();
 
         List<Unit> units = new ArrayList();
         units.add(unit);
         units.add(unit2);
         units.add(new Marine());
+
         //배열, ArrayList
     }
 }
@@ -66,8 +67,13 @@ public abstract class Unit {
     public void stop() {
         System.out.println("현재 위치에 정지");
     }
-    public void setX(int x) { this.x = x; }
-    public void setY(int y) { this.y = y; }
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
 }
 
 class Marine extends Unit {
@@ -101,8 +107,7 @@ class Tank extends Unit {
 
     public void changeMode2() {
         siegeMode = !siegeMode;
-        System.out.println(siegeMode
-                ? "시즈모드가 되었습니다." : "시즈모드가 풀렸습니다.");
+        System.out.println(siegeMode ? "시즈모드가 되었습니다." : "시즈모드가 풀렸습니다.");
     }
 
     public void changeMode() {
