@@ -1,4 +1,4 @@
-package com.green.day3.ch4.extra;
+package com.green.extra.ch4;
 
 public class FlowEx1 {
     public static void main(String[] args) {

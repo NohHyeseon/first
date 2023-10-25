@@ -1,4 +1,4 @@
-package com.green.day3.ch4.extra;
+package com.green.extra.ch4;
 
 import java.util.Scanner;
 
