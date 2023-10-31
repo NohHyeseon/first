@@ -30,5 +30,12 @@ class MyConnTest2 {
         //ctnts : 처음 작성하는 내용입니다.
         //wirter : 홍길동
         //DB에 insert 해주세요.
+
+        BoardEntity entity = new BoardEntity();
+        entity.setTitle("오늘 Insert배움");
+        entity.setCtnts("java를 통해 board테이블에 값 넣어봄");
+        entity.setWriter("신난다");
+        int row = BoardDao.insBoard(entity);
+
     }
 }
