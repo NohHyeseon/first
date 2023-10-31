@@ -21,12 +21,12 @@ public class StarPrint {
 
     String chkGenderById(String id) {
         char ch = id.charAt(7);
-        switch(ch) {
-            case '2', '4' :
-                return "여성";
-            case '1', '3':
-                return "남성";
-        }
+//        switch(ch) {
+//            case '2', '4' :
+//                return "여성";
+//            case '1', '3':
+//                return "남성";
+//        }
         return "유효하지 않은 주민번호";
     }
 

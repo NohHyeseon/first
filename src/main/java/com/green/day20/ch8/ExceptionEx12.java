@@ -9,6 +9,8 @@ public class ExceptionEx12 {
             System.out.println("method2 예외 발생!!");
         }
         System.out.println("끝!!!");
+
+
     }
     static void method1()  {
         int a = 10 / 0;

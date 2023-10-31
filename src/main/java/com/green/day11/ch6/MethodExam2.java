@@ -28,16 +28,16 @@ public class MethodExam2 {
     }
 
     String getSeason(int mon) {
-        switch(mon) {
-            case 3, 4, 5:
-                return "봄";
-            case 6, 7, 8:
-                return "여름";
-            case 9, 10, 11:
-                return "가을";
-            case 12, 1, 2:
-                return "겨울";
-        }
+//        switch(mon) {
+//            case 3, 4, 5:
+//                return "봄";
+//            case 6, 7, 8:
+//                return "여름";
+//            case 9, 10, 11:
+//                return "가을";
+//            case 12, 1, 2:
+//                return "겨울";
+//        }
         return "없음";
     }
 
