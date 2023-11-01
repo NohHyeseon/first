@@ -77,7 +77,7 @@ class MyConnTest5 {
 
 class MyConnTest6 {
     public static void main(String[] args) {
-        BoardEntity result = BoardDao.selBoardById(3); //3은 pk값
+        BoardEntity result = BoardDao.selBoardById(4); //3은 pk값
         System.out.println(result);
     }
 }

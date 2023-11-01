@@ -70,7 +70,7 @@ public class BoardDao {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = " SELECT iboard, title, writer, ctnts, created_at updated_at " +
+        String sql = " SELECT iboard, title, writer, ctnts, created_at, updated_at " +
                      " FROM board WHERE iboard = ?";
         try {
             conn = MyConn.getConn();
