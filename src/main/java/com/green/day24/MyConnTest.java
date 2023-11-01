@@ -32,9 +32,10 @@ class MyConnTest2 {
         //DB에 insert 해주세요.
 
         BoardEntity entity = new BoardEntity();
-        entity.setTitle("오늘 Insert배움");
-        entity.setCtnts("java를 통해 board테이블에 값 넣어봄");
-        entity.setWriter("신난다");
+        entity.setTitle("이스라엘, 빵 구하려 줄 선 난민에 폭탄…“최소 200명 사상”");
+        entity.setCtnts("이스라엘군이 가자지구 북부의 난민캠프를 공습해 수십 명이 숨진 것을 비롯해 사상자 수백 명이 발생했다고 가자지구의 팔레스타인 보건부가 밝혔다.\n" +
+                "가자지구 보건부는 31일 이스라엘군이 가자시티 북쪽에 있는 자발리아 난민촌에 여러 발의 폭탄을 투하해 50명이 숨지고 150명이 다쳤다며, 시간이 지나면 사상자 숫자가 더 늘어날 것으로 보인다고 밝혔다. 외신들은 현지 의료진은 사망자가 100명이 넘는다고 전했다고 보도했다.");
+        entity.setWriter("이스라엘");
         int row = BoardDao.insBoard(entity);
 
     }
@@ -42,7 +43,11 @@ class MyConnTest2 {
 
 class MyConnTest3 {
     public static void main(String[] args) {
+        BoardEntity entity = new BoardEntity();
+        entity.setIboard(2);
 
+        int row = BoardDao.delBoard(entity);
+        System.out.println("row : " + row);
     }
 }
 

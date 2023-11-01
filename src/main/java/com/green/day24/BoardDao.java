@@ -8,8 +8,7 @@ public class BoardDao {
     public static int insBoard(BoardEntity entity) { //title, ctnts, writer
         int result = 0;
         String sql = "INSERT INTO board(title, ctnts, writer) " +
-                     "VALUES " +
-                     "(?, ?, ?)";
+                     "VALUES (?, ?, ?)";
         System.out.println(sql);
         Connection con = null;
         PreparedStatement ps = null;
@@ -24,6 +23,25 @@ public class BoardDao {
             e.printStackTrace();
         } finally {
             MyConn.close(con, ps);
+        }
+        return result;
+    }
+
+    public static int delBoard(BoardEntity entity) {
+        int result = 0;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        String sql = "DELETE FROM board WHERE iboard = ?";
+
+        try {
+            conn = MyConn.getConn();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, entity.getIboard());
+            result = ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            MyConn.close(conn, ps);
         }
         return result;
     }
