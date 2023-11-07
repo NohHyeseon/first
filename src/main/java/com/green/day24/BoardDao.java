@@ -1,7 +1,5 @@
 package com.green.day24;
 
-import org.checkerframework.checker.units.qual.A;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,10 +8,16 @@ import java.util.List;
 
 //data access object
 public class BoardDao {
-    public static int insBoard(BoardEntity entity) { //title, ctnts, writer
+    public static int insBoard(BoardEntity entity) { //title, ctnts, writer, hits
         int result = 0;
+        /*
         String sql = "INSERT INTO board(title, ctnts, writer) " +
                      "VALUES (?, ?, ?)";
+         */
+        String sql = "INSERT INTO board " +
+                     "SET title = ? " +
+                     ", ctnts = ? " +
+                     ", writer = ? ";
         System.out.println(sql);
         Connection con = null;
         PreparedStatement ps = null;
@@ -31,7 +35,7 @@ public class BoardDao {
         }
         return result;
     }
-
+    // 검색, 페이징
     public static List<BoardEntity> selBoardList() {
         List<BoardEntity> list = new ArrayList();
         Connection con = null;
@@ -77,6 +81,7 @@ public class BoardDao {
             ps = conn.prepareStatement(sql);
             ps.setInt(1, iboard);
             rs = ps.executeQuery();
+
             if(rs.next()) {
                 BoardEntity entity = new BoardEntity();
                 entity.setIboard(iboard);
