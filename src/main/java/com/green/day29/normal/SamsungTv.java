@@ -2,12 +2,12 @@ package com.green.day29.normal;
 
 public class SamsungTv {
     private boolean isMute;
-    //private AppleSpeaker speaker;
-    private HarmanSpeaker speaker;
+    private AppleSpeaker speaker;
+    //private HarmanSpeaker speaker;
 
     public SamsungTv() {
-        //speaker = new AppleSpeaker();
-        speaker = new HarmanSpeaker();
+        speaker = new AppleSpeaker();
+        //speaker = new HarmanSpeaker();
     }
 
     public void toggleMute() {
@@ -23,8 +23,8 @@ public class SamsungTv {
 
     public void sound() {
         if(!isMute) {
-            //speaker.sound();
-            speaker.speak();
+            speaker.sound();
+            //speaker.speak();
         }
     }
     /*

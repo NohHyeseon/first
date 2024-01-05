@@ -5,9 +5,6 @@ public class TvTest {
         SamsungTv tv = new SamsungTv();
         tv.toggleMute();
         tv.sound();
-        tv.toggleMute();
-        tv.sound();
-        tv.toggleMute();
-        tv.sound();
+
     }
 }

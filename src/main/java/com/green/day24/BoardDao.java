@@ -22,11 +22,12 @@ public class BoardDao {
         Connection con = null;
         PreparedStatement ps = null;
         try {
-            con = MyConn.getConn();
+            con = MyConnGreengram3.getConn();
             ps = con.prepareStatement(sql);
             ps.setString(1, entity.getTitle());
             ps.setString(2, entity.getCtnts());
             ps.setString(3, entity.getWriter());
+
             result = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

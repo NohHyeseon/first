@@ -1,10 +1,10 @@
 package com.green.day29.normal;
 
 public class AppleSpeaker {
-    private HanilWoofer woofer;
+    private HansungWoofer woofer;
 
     public AppleSpeaker() {
-        woofer = new HanilWoofer();
+        woofer = new HansungWoofer();
     }
 
     public void sound() {
