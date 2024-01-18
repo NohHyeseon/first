@@ -1,7 +1,9 @@
 package com.green.day68.ch14;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -34,8 +36,16 @@ public class LambdaEx4 {
             }
         });
         */
-        list.removeIf(v -> v % 2 == 0 );
+        list.removeIf( v -> v % 2 == 0 );
         System.out.println(list);
+        list.replaceAll( v -> v <= 15 ? v * 2 : v ); //15이하는 x2처리, 나머지는 그대로
+        System.out.println(list);
+
+        Map<String, String> map = new HashMap();
+        map.put("name", "홍길동");
+        map.put("age", "23세");
+        map.put("height", "172cm");
+        map.forEach( (k, v) -> System.out.printf("%s: %s\n", k, v) );
     }
 }
 
