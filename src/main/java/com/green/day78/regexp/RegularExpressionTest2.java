@@ -13,7 +13,7 @@ public class RegularExpressionTest2 {
         System.out.printf("%s > %b\n", str1, Pattern.matches(regexp, str1));
         System.out.printf("%s > %b\n", str2, Pattern.matches(regexp, str2));
         System.out.printf("%s > %b\n", str3, Pattern.matches(regexp, str3));
-        System.out.printf("%s > %b\n", str4, Pattern.matches(regexp, str3));
+        System.out.printf("%s > %b\n", str4, Pattern.matches(regexp, str3));;
 
     }
 }
