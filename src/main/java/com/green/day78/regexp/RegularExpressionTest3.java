@@ -10,7 +10,7 @@ public class RegularExpressionTest3 {
         String str4 = "11   ㄱ11";
         String str5 = "1 하하1하하1212";
         String str6 = "878";
-        String regexp = "^([ㄱ-ㅎㅏ-ㅣ가-힣0-9| ]+[0-9]*)$";
+        String regexp = "^([ㄱ-ㅎㅏ-ㅣ가-힣0-9|]+[0-9]*)$";
 
         System.out.printf("%s > %b\n", str1, Pattern.matches(regexp, str1));
         System.out.printf("%s > %b\n", str2, Pattern.matches(regexp, str2));
@@ -18,6 +18,6 @@ public class RegularExpressionTest3 {
         System.out.printf("%s > %b\n", str4, Pattern.matches(regexp, str4));
         System.out.printf("%s > %b\n", str5, Pattern.matches(regexp, str5));
         System.out.printf("%s > %b\n", str6, Pattern.matches(regexp, str6));
-
+//eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoie1wiaXVzZXJcIjoyLFwiaWxldmVsXCI6MX0iLCJpdXNlciI6MiwibGV2ZWwiOjEsImlhdCI6MTcwNjU4NjQwMiwiZXhwIjoxNzA3ODgyNDAyfQ.fOtJ6v7OgwwgpUmnPL4o2QDH_5gLHfWCuGb97H6Suao
     }
 }
